@@ -12,7 +12,7 @@ void testAuth() {
             pass : '123456',
     ]
     open("http://test.shopdt.ru/")
- //   $(By.linkText("Да, продолжаем!")).click()
+    $(By.linkText("Да, продолжаем!")).click()
     $(".js-user-button").click()
     $(By.name("phone_email")).setValue(user.login)
     $(By.name("password")).setValue(user.pass)
