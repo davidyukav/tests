@@ -3,6 +3,19 @@ import org.testng.annotations.BeforeTest
 class Settings {
     public static Boolean isDev
     public static String domen
+    public static String browser
+
+    static String setBrowser() {
+        browser = "chrome"
+        browser
+    }
+
+    static void getBrowser() {
+        browser = setBrowser()
+        if (browser == "chrome") {
+            startChrome()
+        }
+    }
 
     static void startChrome() {
         System.setProperty("webdriver.chrome.driver", "\\tests\\chromedriver.exe")
@@ -26,13 +39,7 @@ class Settings {
 
     @BeforeTest()
     void setSettings() {
-        startChrome()
+        getBrowser()
         getDomen()
     }
-
-
-
-
-
-
 }
