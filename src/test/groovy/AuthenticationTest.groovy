@@ -1,12 +1,11 @@
 import com.codeborne.selenide.Condition
-import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By
 import org.testng.annotations.Test
 
 import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.open
 
-class AuthenticationTest {
+class AuthenticationTest extends Settings{
     @Test()
     void testAuth() {
         Map user = [
@@ -14,10 +13,8 @@ class AuthenticationTest {
                 pass : '123456',
         ]
 
-        System.setProperty("webdriver.chrome.driver", "D:\\tests\\chromedriver.exe")
-        System.setProperty("selenide.browser", "Chrome")
-        open("http://dev:dtdev@test.shopdt.ru/")
-        open("http://test.shopdt.ru")
+        open(domen)
+        open("http://test.shopdt.ru/")
         $(By.linkText("Да, продолжаем!")).click()
         $(".js-user-button").click()
         $(By.name("phone_email")).setValue(user.login)
