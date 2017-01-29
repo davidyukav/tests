@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.open
 
 class AuthenticationTest extends Settings{
+
     @Test()
     void testAuth() {
         Map user = [
@@ -16,11 +17,7 @@ class AuthenticationTest extends Settings{
         open(domen)
         open("http://test.shopdt.ru/")
         $(By.linkText("Да, продолжаем!")).click()
-        $(".js-user-button").click()
-        $(By.name("phone_email")).setValue(user.login)
-        $(By.name("password")).setValue(user.pass)
-        $(".js-tm-auth_btn").click()
-        $(".b-little-message__text").waitUntil(Condition.hasText('Успешная авторизация.'), 10000)
+        Auth.authUser(user.login, user.pass)
 //           $("#fid") - обращение по id
     }
 }
