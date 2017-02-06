@@ -1,9 +1,14 @@
 import org.testng.annotations.Test
 
-/**
- * Created by user on 06.02.17.
- */
-class RegistrationTest {
+class RegistrationTest extends Settings {
     @Test()
+    void testReg(){
+    Map user = [
+            fio : 'Иванов Иван Иванович',
+            phone : '+79999999999',
+            pass : '654321',
+            email : 'email@email.email'
+    ]
+    }
 
 }
