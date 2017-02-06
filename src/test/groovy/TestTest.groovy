@@ -11,6 +11,6 @@ class TestTest {
         println result
         def browser = new FirefoxDriver()
         browser.get("http://www.domotekhnika.ru")
-    }
+    browser.close()}
 
 }

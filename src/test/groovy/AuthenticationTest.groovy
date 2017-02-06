@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition
 import org.openqa.selenium.By
 import org.testng.annotations.Test
 
@@ -15,7 +14,7 @@ class AuthenticationTest extends Settings{
         ]
 
         open(domen)
-        open("http://test.shopdt.ru/")
+//        open("http://test.shopdt.ru/terminal_mode/off")
         $(By.linkText("Да, продолжаем!")).click()
         Auth.authUser(user.login, user.pass)
 //           $("#fid") - обращение по id
