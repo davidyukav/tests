@@ -1,4 +1,5 @@
 import org.testng.annotations.Test
+import static com.codeborne.selenide.Selenide.open
 
 class RegistrationTest extends Settings {
     @Test()
@@ -9,6 +10,9 @@ class RegistrationTest extends Settings {
             pass : '654321',
             email : 'email@email.email'
     ]
+        open(domen)
+        Auth.registerUser(user)
+
     }
 
 }

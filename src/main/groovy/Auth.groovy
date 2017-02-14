@@ -14,4 +14,16 @@ class Auth {
         $(".js-tm-auth_btn").click()
         $(".b-little-message__text").waitUntil(Condition.hasText('Успешная авторизация.'), 10000)
     }
+
+    static void registerUser(String fio, String phone, String pass, String email) {
+        $(".js-user-button").click()
+        $(By.linkText("Регистрация")).click()
+        $(By.name("fio")).setValue(fio)
+        $(By.name("phone")).setValue(phone)
+        $(By.name("password")).setValue(pass)
+        $(By.name("email")).setValue(email)
+        $(By.name("terms")).setSelected(true)
+        $(".js-tm-registration_btn").click()
+
+    }
 }
