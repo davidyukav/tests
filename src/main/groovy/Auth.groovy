@@ -20,9 +20,9 @@ class Auth {
         $(By.linkText("Регистрация")).click()
         $(By.name("fio")).setValue(fio)
         $(By.name("phone")).setValue(phone)
-        $(By.name("password")).setValue(pass)
+        $(By.cssSelector(".js-auth__register-form .b-form__text.i-show-pass")).setValue(pass)
         $(By.name("email")).setValue(email)
-        $(By.name("terms")).setSelected(true)
+        $(By.name("terms")).parent().click()
         $(".js-tm-registration_btn").click()
 
     }
